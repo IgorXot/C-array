@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\bin\Debug\net6.0\Lecture2Array.exe
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\bin\Debug\net6.0\Lecture2Array.deps.json
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\bin\Debug\net6.0\Lecture2Array.runtimeconfig.json
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\bin\Debug\net6.0\Lecture2Array.dll
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\bin\Debug\net6.0\Lecture2Array.pdb
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\obj\Debug\net6.0\Lecture2Array.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\obj\Debug\net6.0\Lecture2Array.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\obj\Debug\net6.0\Lecture2Array.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\obj\Debug\net6.0\Lecture2Array.AssemblyInfo.cs
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\obj\Debug\net6.0\Lecture2Array.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\obj\Debug\net6.0\Lecture2Array.dll
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\obj\Debug\net6.0\refint\Lecture2Array.dll
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\obj\Debug\net6.0\Lecture2Array.pdb
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\obj\Debug\net6.0\Lecture2Array.genruntimeconfig.cache
+C:\Users\Admin\Desktop\CSharp\Lecture2Array\obj\Debug\net6.0\ref\Lecture2Array.dll
