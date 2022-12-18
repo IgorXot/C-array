@@ -262,27 +262,152 @@ Console.WriteLine(result);
  // 1. Задайте массив заполненный случайными положительными трёхзначными числами. 
  //    Напишите программу, которая покажет количество чётных чисел в массиве.
 
-int[] CreateArray(int size)
+/*
+
+int[] CreateRandomArray(int size)
 {
     int[] array = new int [size];
     
     for(int i = 0; i < size; i++)
-    {
-        Console.Write($"Input Value of {i + 1} element: ");
-        array[i] = Convert.ToInt32(Console.ReadLine());
-    }
-    return array;
+        array [i] = new Random().Next(100, 1000);
+
+    return array; 
 }
+
 void ShowArray(int[] array)
 {
     for(int i = 0; i < array.Length; i++)
         Console.Write(array[i] + " ");
+    Console.WriteLine();    
 }
 
 int NumberOfEvenNumbers(int[] array)
+{
+
+    int count = 0;
+
+    for(int i = 0; i < array.Length; i++)
+        if(array[i] % 2 == 0)
+            count++;
+    return count;
+}
+
+Console.Write("Input a number of elements: ");
+int length = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreateRandomArray(length);
+ShowArray(myArray);
+
+int result = NumberOfEvenNumbers(myArray);
+Console.Write(result);
+
+*/
 
 
 
+//Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+/*
+
+int[] CreateRandomArray(int size)
+{
+    int[] array = new int [size];
+    
+    for(int i = 0; i < size; i++)
+        array [i] = new Random().Next(1, 10);
+
+    return array; 
+}
+
+void ShowArray(int[] array) 
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();    
+}
+
+int GetSum (int[] array)
+{
+    int sum = 0;
+
+    for(int i = 1; i < array.Length; i += 2)
+        sum += array[i]; // sum = sum + array[i]
+    return sum;
+
+}
+
+Console.Write("Input a number of elements: ");
+int length = Convert.ToInt32(Console.ReadLine());
+
+int[] myArray = CreateRandomArray(length);
+ShowArray(myArray);
+
+int result = GetSum(myArray);
+Console.Write(result);
+
+*/
+
+//Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+int[] CreateRandomArray(int size)
+{
+    int[] array = new int [size];
+    
+    for(int i = 0; i < size; i++)
+        array [i] = new Random().Next(1, 10);
+
+    return array; 
+}
+
+void ShowArray(int[] array) 
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();    
+}
+
+double GetRandomNumberInRange(Random random,double minNumber, double maxNumber)
+
+    return random.NextDouble() * (maxNumber - minNumber) + minNumber;
+
+
+int maxNum = numbers[0];
+int minNum = numbers[0];
+
+for (int i = 0; i < array.Length; i++)
+{
+    if (numbers[i] > maxNum)
+    {
+        maxNum = numbers[i];
+    }
+    if (numbers[i] < minNum)
+    {
+        minNum = numbers[i];
+    }
+}
+Console.WriteLine($"Разница между максимальным и минимальным числом = {maxNum - minNum}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// 3. Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
 
 
