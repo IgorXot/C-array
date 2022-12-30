@@ -1033,6 +1033,8 @@ Show2dArray(myArray);
 
 //Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
 
+/*
+
 int[,] CreateRandom2dArray()
 {
     Console.Write("Input a number of rows: ");
@@ -1088,5 +1090,433 @@ int numrow2 = Convert.ToInt32(Console.ReadLine());
 SwitchRows(myArray, numrow1, numrow2);
 Show2dArray(myArray);
 
+*/
 
 //Из двумерного массива целых чисел удалить строку и столбец, на пересечении которых расположен наименьший элемент.
+
+/*
+
+int[,] CreateRandom2dArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array = new int[rows, columns];
+
+    for (int i = 0; i < rows; i++)
+        for(int j = 0; j < columns; j++)
+            array[i,j] = new Random().Next(minValue, maxValue + 1);
+
+    return array;
+}
+
+void Show2dArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i,j] + "\t");
+
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+int[,] newArray(int[,] array)
+{
+    int minJ = 0;
+    int minI = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if(array[i,j] < array[minI,minJ])
+            {
+                minI = i;
+                minJ = j;
+            }
+        }
+    }
+
+    int[,] newArray = new int[array.GetLength(0)-1, array.GetLength(1)-1];
+    for (int i = 0, x =0; i < array.GetLength(0); i++, x++)
+    {
+        if( i == minI)
+        {
+            x = x - 1;
+        }
+        else
+        {
+            for (int j = 0, y = 0; j < array.GetLength(1); j++, y++)
+            {
+                if( j == minJ)
+                {
+                    y = y - 1;
+                }
+                else
+                {
+                    newArray[x,y] = array[i,j];
+                }
+            }
+        }
+    }                
+    return newArray;
+}
+
+int[,] myArray = CreateRandom2dArray();
+Show2dArray(myArray);
+int[,] newMyArray = newArray(myArray);
+Console.WriteLine();
+Show2dArray(newMyArray);
+
+*/
+
+//-------------------------------------------------DZ8----------------------------------------------------------------------
+
+/*
+// Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+
+int[,] CreateRandom2dArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array = new int[rows, columns];
+
+    for (int i = 0; i < rows; i++)
+        for(int j = 0; j < columns; j++)
+            array[i,j] = new Random().Next(minValue, maxValue + 1);
+
+    return array;
+}
+
+void Show2dArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i,j] + "\t");
+
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+
+void SortToLower(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(1) - 1; k++)
+            {
+                if (array[i, k] < array[i, k + 1])
+                {
+                    int temp = array[i, k + 1];
+                    array[i, k + 1] = array[i, k];
+                    array[i, k] = temp;
+                }
+            }
+        }
+    }
+}
+
+int[,] myArray = CreateRandom2dArray();
+Show2dArray(myArray);
+SortToLower(myArray);
+Show2dArray(myArray);
+
+*/
+
+// Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+
+/*
+
+int[,] CreateRandom2dArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of columns: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array = new int[rows, columns];
+
+    for (int i = 0; i < rows; i++)
+        for(int j = 0; j < columns; j++)
+            array[i,j] = new Random().Next(minValue, maxValue + 1);
+
+    return array;
+}
+
+void Show2dArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+            Console.Write(array[i,j] + "\t");
+
+        Console.WriteLine();
+    }
+    Console.WriteLine();
+}
+void NumberRowMinSum(int[,] array)
+{
+    int minRow = 0;
+    int minSumRow = 0;
+    int sumRow = 0;
+    for (int i = 0; i < array.GetLength(1); i++)
+    {
+        minRow += array[0, i];
+    }
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++) sumRow += array[i, j];
+        if (sumRow < minRow)
+        {
+            minRow = sumRow;
+            minSumRow = i;
+        }
+        sumRow = 0;
+    }
+    Console.Write($"{minSumRow + 1} строка");
+}
+int[,] myArray = CreateRandom2dArray();
+Show2dArray(myArray);
+NumberRowMinSum(myArray);
+
+*/
+
+//  Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+
+/*
+
+
+int rows = ReadInt("Введите количество строк: ");
+int columns = ReadInt("Введите количество столбцов: ");
+int[,] array = new int[rows, columns];
+int[,] secondArray = new int[rows, columns];
+int[,] resultArray = new int[rows, columns];
+
+FillArrayRandom(array);
+PrintArray2D(array);
+
+Console.WriteLine();
+
+FillArrayRandom(secondArray);
+PrintArray2D(secondArray);
+
+Console.WriteLine();
+
+if (array.GetLength(0) != secondArray.GetLength(1))
+{
+    Console.WriteLine(" Нельзя перемножить ");
+    return;
+}
+for (int i = 0; i < array.GetLength(0); i++)
+{
+    for (int j = 0; j < secondArray.GetLength(1); j++)
+    {
+        resultArray[i, j] = 0;
+        for (int k = 0; k < array.GetLength(1); k++)
+        {
+            resultArray[i, j] += array[i, k] * secondArray[k, j];
+        }
+    }
+}
+
+PrintArray2D(resultArray);
+
+
+int ReadInt(string message)
+{
+    Console.Write(message);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+
+void FillArrayRandom(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(1, 10);
+        }
+    }
+}
+
+
+void PrintArray2D(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+*/
+
+
+// --------------------------------------------------Rekursiya--------------------------------------------------------------------
+
+
+// 1.Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от 1 до N.
+
+/*
+
+void ShowNums(int num)
+{                                            // Console.Write(num + " ");
+    if(num > 1)
+    {
+        ShowNums(num - 1);
+    }
+    Console.Write(num + " ");                // убрать Console.Write(num + " ");
+}
+   
+Console.WriteLine("Input a number: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+ShowNums(n);
+
+*/
+
+// 2. Напишите программу, которая будет принимать на вход число и возвращать сумму его цифр.
+
+/*
+
+int GetSumOfDigits(int num)
+{
+    if(num != 0)
+    {
+        return GetSumOfDigits(num / 10) + num % 10;
+    }
+    return 0;
+}
+Console.WriteLine(GetSumOfDigits(1342));
+
+*/
+
+// 3. Задайте значения M и N. Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
+
+/*
+
+void ShowNums(int num1, int num2)
+{                                            
+    Console.Write(num1 + " ");   
+    if(num1 < num2) ShowNums(num1 + 1, num2);
+    if(num2 < num1) ShowNums(num1 - 1, num2);                   
+}
+   
+Console.WriteLine("Введите первое число: ");
+int num1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите второе число: ");
+int num2 = Convert.ToInt32(Console.ReadLine());
+ShowNums(num1, num2);
+
+*/
+
+// 4. Напишите программу, которая на вход принимает два числа A и B, и возводит число А в целую степень B.
+
+/*
+
+double Num(int a, int b)
+{
+    if(b > 0) return Num(a, b - 1) * a; 
+    if(b < 0) return Num(a, b + 1) / a;
+    return 1; 
+}
+
+
+
+*/
+
+
+//-----------------------------------------------------------DZ9-------------------------------------------------------------------
+
+//  Задача 64: Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. 
+// Выполнить с помощью рекурсии.
+
+/*
+
+ void ShowNums(int num)
+{   
+    Console.Write(num + " ");
+    if(num > 1)
+    {
+        ShowNums(num - 1);
+    }
+            
+}
+   
+Console.WriteLine("Input a number: ");
+int n = Convert.ToInt32(Console.ReadLine());
+
+ShowNums(n);
+
+*/
+
+//Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+
+
+void GapNumberSum (int numberM, int numberN, int sum)
+{
+    if (numberM > numberN) 
+    {
+        Console.WriteLine($"Сумма натуральных элементов в промежутке от M до N: {sum}"); 
+        return;
+    }
+    sum = sum + (numberM++);
+    GapNumberSum(numberM, numberN, sum);
+}
+
+Console.WriteLine("Введите начальное число M:");
+int numberM = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите начальное число 1:");
+int numberN = Convert.ToInt32(Console.ReadLine());
+
+GapNumberSum(numberM, numberN,0);
+
+
+
+//Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+
+/*
+
+int AckermannFunction (int numberM, int numberN)
+{
+    if (numberM == 0) return numberN + 1;
+    if (numberM != 0 && numberN == 0) return AckermannFunction(numberM - 1, 1);
+    if (numberM > 0 && numberN > 0) return AckermannFunction(numberM - 1, AckermannFunction(numberM, numberN - 1));
+return AckermannFunction(numberM, numberN);
+}
+
+Console.WriteLine("Введите начальное число M:");
+int numberM = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите начальное число N:");
+int numberN = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine($"Функция Аккермана для чисел A({numberM},{numberN}) = {AckermannFunction(numberM, numberN)}");
+
+*/
